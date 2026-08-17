@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --cafe:#3A2318;
@@ -70,9 +70,6 @@
     transform:translate(50%, -50%);
   }
 
-  /* telas estreitas e altas (celular): a digital fica proporcionalmente
-     larga demais e as duas metades se encontram no centro. Aqui reduzimos
-     a altura e mostramos só uma fatia fina de cada lado, sem sobrepor. */
   @media (max-width:700px){
     .bg-icon{
       height:min(100vh, 150vw);
@@ -109,7 +106,7 @@
   }
 
   .logo{
-    width:78px;
+    width:130px;
     height:auto;
     color:var(--pergaminho);
     margin-bottom:6px;
@@ -128,17 +125,17 @@
   }
 
   .tagline{
-    margin:8px 0 0;
+    margin:22px 0 0;
     font-size:13px;
     letter-spacing:3px;
     text-transform:uppercase;
     color:var(--brasa);
     opacity:0;
-    animation:rise .8s ease-out .22s forwards;
+    animation:rise .8s ease-out .12s forwards;
   }
 
   .verse{
-    margin:26px 0 34px;
+    margin:22px 0 0;
     font-style:italic;
     font-weight:400;
     font-size:16px;
@@ -149,13 +146,108 @@
     animation:rise .8s ease-out .32s forwards;
   }
 
+  /* ---- Bloco de evento exclusivo + contagem regressiva ---- */
+  .event-block{
+    width:100%;
+    margin:30px 0 34px;
+    padding:22px 18px;
+    border:1px solid rgba(250,244,236,0.22);
+    border-radius:16px;
+    background:rgba(250,244,236,0.04);
+    opacity:0;
+    animation:rise .8s ease-out .4s forwards;
+  }
+
+  .event-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:500;
+    font-size:10.5px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--brasa);
+    padding:6px 14px;
+    border:1px solid rgba(232,149,106,0.45);
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+
+  .event-badge::before{
+    content:"";
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:var(--brasa);
+    flex:0 0 auto;
+  }
+
+  .event-note{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:300;
+    font-size:13.5px;
+    line-height:1.6;
+    color:var(--areia);
+    max-width:300px;
+    margin:0 auto 20px;
+  }
+
+  .countdown{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+  }
+
+  .countdown-unit{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-width:54px;
+  }
+
+  .countdown-value{
+    font-family:'Lora',serif;
+    font-weight:600;
+    font-size:28px;
+    color:var(--pergaminho);
+    font-variant-numeric:tabular-nums;
+    line-height:1;
+  }
+
+  .countdown-label{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:300;
+    font-size:9.5px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#a8887a;
+    margin-top:6px;
+  }
+
+  .countdown-sep{
+    font-family:'Lora',serif;
+    font-size:24px;
+    color:rgba(250,244,236,0.25);
+    align-self:flex-start;
+    margin-top:2px;
+  }
+
+  .event-closed{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:300;
+    font-size:13px;
+    letter-spacing:0.5px;
+    color:var(--areia);
+  }
+
   .links{
     width:100%;
     display:flex;
     flex-direction:column;
     gap:14px;
     opacity:0;
-    animation:rise .8s ease-out .42s forwards;
+    animation:rise .8s ease-out .5s forwards;
   }
 
   .link-card{
@@ -230,7 +322,7 @@
     align-items:center;
     gap:6px;
     opacity:0;
-    animation:rise .8s ease-out .52s forwards;
+    animation:rise .8s ease-out .6s forwards;
   }
 
   .footer-line{
@@ -245,7 +337,7 @@
   }
 
   @media (prefers-reduced-motion: reduce){
-    .logo,h1,.tagline,.verse,.links,footer{
+    .logo,h1,.tagline,.verse,.event-block,.links,footer{
       animation:none !important;
       opacity:1 !important;
       transform:none !important;
@@ -261,14 +353,17 @@
   @media (max-width:360px){
     h1{ font-size:34px; }
     .tagline{ font-size:12px; letter-spacing:2.5px; }
-    .verse{ font-size:15px; margin:22px 0 28px; }
+    .verse{ font-size:15px; }
+    .event-block{ padding:18px 14px; }
+    .countdown-value{ font-size:24px; }
+    .countdown-unit{ min-width:46px; }
     .link-card{ padding:14px 16px; gap:12px; }
     .link-title{ font-size:15px; }
   }
 
   @media (max-height:700px){
     body{ padding-top:36px; }
-    .verse{ margin-bottom:24px; }
+    .event-block{ margin:24px 0 28px; }
     footer{ margin-top:28px; }
   }
 </style>
@@ -293,64 +388,94 @@
     </defs>
   </svg>
 
-  <svg class="bg-icon left" viewBox="82.18 -81.98 2998.11 3862.79" aria-hidden="true">
-    <use href="#fp-icon"></use>
+  <svg class="bg-icon left" viewBox="82.18 -81.98 2998.11 3862.79" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+    <use href="#fp-icon" xlink:href="#fp-icon"></use>
   </svg>
-  <svg class="bg-icon right" viewBox="82.18 -81.98 2998.11 3862.79" aria-hidden="true">
-    <use href="#fp-icon"></use>
+  <svg class="bg-icon right" viewBox="82.18 -81.98 2998.11 3862.79" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+    <use href="#fp-icon" xlink:href="#fp-icon"></use>
   </svg>
 
   <main>
-    <svg class="logo" viewBox="82.18 -81.98 2998.11 3862.79" role="img" aria-label="Símbolo Sê Tu: impressão digital com uma cruz ao centro">
-      <use href="#fp-icon"></use>
+    <svg class="logo" viewBox="82.18 -81.98 2998.11 3862.79" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Símbolo Sê Tu: impressão digital com uma cruz ao centro">
+      <use href="#fp-icon" xlink:href="#fp-icon"></use>
     </svg>
-
-    <h1>Sê Tu</h1>
-    <p class="tagline">streetwear com propósito</p>
 
     <p class="verse">ouça a voz que te chama para perto.</p>
 
-    <nav class="links" aria-label="Links da Sê Tu">
-      <a class="link-card" href="https://www.instagram.com/setu.brand" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-          <circle cx="12" cy="12" r="4.2"></circle>
-          <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
-        </svg>
-        <span class="link-text">
-          <span class="link-title">Instagram</span>
-          <span class="link-sub">@setu.brand</span>
-        </span>
-      </a>
+    <div class="event-block">
+      <span class="event-badge">Evento de lançamento para convidados selecionados</span>
+      <p class="event-note">Um encontro reservado, antes de tudo. Se você recebeu o convite, já sabe onde e quando.</p>
 
-      <a class="link-card" href="https://setu29.lojavirtualnuvem.com.br" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-          <path d="M6 8h12l-1 12.2a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 8Z"></path>
-          <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
-        </svg>
-        <span class="link-text">
-          <span class="link-title">Loja</span>
-          <span class="link-sub">Conheça as peças</span>
-        </span>
-      </a>
-
-      <a class="link-card" href="https://wa.me/5547988647171" target="_blank" rel="noopener noreferrer">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-          <path d="M20.5 11.9a8.5 8.5 0 0 1-12.4 7.5L4 20.5l1.15-3.9A8.5 8.5 0 1 1 20.5 11.9Z"></path>
-          <path d="M9.2 9.6c-.2 1 .6 2.6 1.5 3.5.9.9 2.5 1.8 3.6 1.6.5-.1 1-.6 1.2-1.1l.1-.5-1.6-1-.5.7c-.7-.2-1.4-.7-1.9-1.2-.5-.5-.9-1.1-1.1-1.8l.7-.6-.9-1.6h-.5c-.5.1-.9.5-1.1 1Z" fill="currentColor" stroke="none"></path>
-        </svg>
-        <span class="link-text">
-          <span class="link-title">WhatsApp</span>
-          <span class="link-sub">Fale com a gente</span>
-        </span>
-      </a>
-    </nav>
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-days">00</span>
+          <span class="countdown-label">dias</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-hours">00</span>
+          <span class="countdown-label">horas</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-minutes">00</span>
+          <span class="countdown-label">min</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cd-seconds">00</span>
+          <span class="countdown-label">seg</span>
+        </div>
+      </div>
+    </div>
 
     <footer>
       <span class="footer-line">sê tu. não quem o mundo quer que você seja.</span>
       <span class="footer-line">© 2026 Sê Tu</span>
     </footer>
   </main>
+
+  <script>
+    // Data/hora do evento: 12/09/2026, 18h (horário de Brasília, UTC-3)
+    // Construído com Date.UTC para evitar problemas de parsing de fuso horário
+    // entre navegadores: 18h em Brasília (UTC-3) = 21h em UTC.
+    var eventDate = Date.UTC(2026, 8, 12, 21, 0, 0);
+
+    var elDays = document.getElementById('cd-days');
+    var elHours = document.getElementById('cd-hours');
+    var elMinutes = document.getElementById('cd-minutes');
+    var elSeconds = document.getElementById('cd-seconds');
+    var elBlock = document.querySelector('.event-block');
+    var elCountdown = document.getElementById('countdown');
+    var elNote = document.querySelector('.event-note');
+
+    function pad(n){ n = String(n); return n.length < 2 ? '0' + n : n; }
+
+    function updateCountdown(){
+      var now = new Date().getTime();
+      var diff = eventDate - now;
+
+      if (diff <= 0){
+        elCountdown.innerHTML = '<span class="event-closed">O momento chegou.</span>';
+        if (elNote) elNote.textContent = 'A Sê Tu já começou a se revelar.';
+        clearInterval(timer);
+        return;
+      }
+
+      var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      elDays.textContent = pad(days);
+      elHours.textContent = pad(hours);
+      elMinutes.textContent = pad(minutes);
+      elSeconds.textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    var timer = setInterval(updateCountdown, 1000);
+  </script>
 
 </body>
 </html>
