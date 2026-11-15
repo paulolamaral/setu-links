@@ -1,0 +1,60 @@
+{
+  "marca": "Sê Tu",
+  "tagline": "streetwear com propósito",
+  "whatsapp": "5547988647171",
+  "instagram": "https://instagram.com/setu.brand",
+  "moeda": "BRL",
+  "entrega": {
+    "opcoes": [
+      {
+        "id": "retirada",
+        "rotulo": "Retirar em Camboriú/SC"
+      },
+      {
+        "id": "envio",
+        "rotulo": "Envio pelos Correios (frete combinado no WhatsApp)"
+      }
+    ]
+  },
+  "tabelaMedidas": {},
+  "webhookPedidos": "",
+  "rastreio": {
+    "metaPixelId": "1746972999884311",
+    "ga4Id": ""
+  },
+  "avisoTopo": "",
+  "versiculos": {
+    "genesis": {
+      "texto": "…farei de ti uma grande nação, e te abençoarei, e engrandecerei o teu nome. Sê tu uma bênção.",
+      "ref": "Gênesis 12:2"
+    },
+    "salmos": {
+      "texto": "de modo assombroso e maravilhoso fui formado.",
+      "ref": "Salmos 139:14"
+    }
+  },
+  "dominio": "https://setubrand.com.br",
+  "faq": [
+    {
+      "p": "As camisetas da Sê Tu são cristãs?",
+      "r": "Sim. A Sê Tu é uma marca de streetwear cristão: estampas feitas para lembrar quem Deus disse que você é, com a beleza em primeiro lugar e a mensagem dentro."
+    },
+    {
+      "p": "Como faço um pedido?",
+      "r": "Escolha a peça, a cor e o tamanho, monte a sacola e toque em “Enviar pedido pelo WhatsApp”. O pedido já vai pronto na conversa, e a gente confirma estoque, frete e pagamento com você."
+    },
+    {
+      "p": "Como funciona a entrega?",
+      "r": "Você pode retirar em Camboriú/SC ou receber pelos Correios, com o frete combinado no WhatsApp."
+    },
+    {
+      "p": "Como é o pagamento?",
+      "r": "Aceitamos PIX, cartão de crédito e cartão de débito, por link de pagamento. Depois que confirmamos o seu pedido no WhatsApp, enviamos o link para você pagar com a forma que preferir. O site não coleta dados de cartão."
+    },
+    {
+      "p": "O que significa edição limitada?",
+      "r": "Cada estampa é produzida em poucas unidades por tamanho. Por isso o estoque mostrado no site é informativo, e a disponibilidade é confirmada na conversa."
+    }
+  ],
+  "verificacaoFacebook": "hd4xt2jbey37qsmaqau4kvk6x4ptd9"
+}

@@ -1,0 +1,399 @@
+{
+  "colecoes": [
+    {
+      "id": "tema-identidade",
+      "nome": "Tema Identidade",
+      "descricao": "O símbolo da marca virou a primeira coleção. Cada peça carrega uma mesma verdade: você foi feito à mão, e a sua identidade está ancorada em Cristo.",
+      "status": "ativa",
+      "capa": "assets/produtos/capas/tema-identidade.webp",
+      "ordem": 1
+    },
+    {
+      "id": "saia-do-barco",
+      "nome": "Saia do Barco",
+      "descricao": "A fé começa onde o controle termina.",
+      "status": "ativa",
+      "capa": "assets/produtos/capas/saia-do-barco.webp",
+      "ordem": 2
+    }
+  ],
+  "produtos": [
+    {
+      "slug": "meu-passado-ja-nao-me-define",
+      "nome": "Meu passado já não me define",
+      "colecao": "tema-identidade",
+      "publico": "masculino",
+      "preco": 79.9,
+      "precoDe": null,
+      "descricao": "Para quem carrega uma história que ainda pesa. As correntes estão quebradas. O que ficou para trás não dita quem você é hoje.",
+      "detalhes": [],
+      "cores": [
+        {
+          "id": "off-white",
+          "nome": "Off-white",
+          "hex": "#F1EBDF",
+          "imagens": [
+            "assets/produtos/meu-passado-ja-nao-me-define/off-white-02.webp",
+            "assets/produtos/meu-passado-ja-nao-me-define/off-white-03.webp",
+            "assets/produtos/meu-passado-ja-nao-me-define/off-white-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/meu-passado-ja-nao-me-define/off-white-01.webp"
+        },
+        {
+          "id": "preta",
+          "nome": "Preta",
+          "hex": "#1C1C1C",
+          "imagens": [
+            "assets/produtos/meu-passado-ja-nao-me-define/preta-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          }
+        },
+        {
+          "id": "marrom",
+          "nome": "Marrom",
+          "hex": "#4A2A1E",
+          "imagens": [
+            "assets/produtos/meu-passado-ja-nao-me-define/marrom-02.webp",
+            "assets/produtos/meu-passado-ja-nao-me-define/marrom-03.webp",
+            "assets/produtos/meu-passado-ja-nao-me-define/marrom-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/meu-passado-ja-nao-me-define/marrom-01.webp"
+        }
+      ],
+      "edicaoLimitada": true,
+      "destaque": true,
+      "ativo": true
+    },
+    {
+      "slug": "se-tu-a-resposta-que-o-mundo-precisa",
+      "nome": "Sê tu a resposta que o mundo precisa",
+      "colecao": "tema-identidade",
+      "publico": "masculino",
+      "preco": 79.9,
+      "precoDe": null,
+      "descricao": "Você é a luz do mundo. A sua vida não foi feita para ficar escondida, mas para brilhar diante dos outros e apontar para Aquele que te formou.",
+      "detalhes": [],
+      "cores": [
+        {
+          "id": "off-white",
+          "nome": "Off-white",
+          "hex": "#F1EBDF",
+          "imagens": [
+            "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/off-white-02.webp",
+            "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/off-white-03.webp",
+            "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/off-white-04.webp",
+            "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/off-white-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/off-white-01.webp"
+        },
+        {
+          "id": "preta",
+          "nome": "Preta",
+          "hex": "#1C1C1C",
+          "imagens": [
+            "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/preta-02.webp",
+            "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/preta-03.webp",
+            "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/preta-04.webp",
+            "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/preta-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/se-tu-a-resposta-que-o-mundo-precisa/preta-01.webp"
+        }
+      ],
+      "edicaoLimitada": true,
+      "destaque": true,
+      "ativo": true
+    },
+    {
+      "slug": "tudo-se-fez-novo",
+      "nome": "Tudo se fez novo",
+      "colecao": "tema-identidade",
+      "publico": "masculino",
+      "preco": 79.9,
+      "precoDe": null,
+      "descricao": "As mãos do oleiro no barro. Você não é um conserto do que era. É criatura nova, moldada com intenção.",
+      "detalhes": [],
+      "cores": [
+        {
+          "id": "off-white",
+          "nome": "Off-white",
+          "hex": "#F1EBDF",
+          "imagens": [
+            "assets/produtos/tudo-se-fez-novo/off-white-02.webp",
+            "assets/produtos/tudo-se-fez-novo/off-white-03.webp",
+            "assets/produtos/tudo-se-fez-novo/off-white-04.webp",
+            "assets/produtos/tudo-se-fez-novo/off-white-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/tudo-se-fez-novo/off-white-01.webp"
+        }
+      ],
+      "edicaoLimitada": true,
+      "destaque": true,
+      "ativo": true
+    },
+    {
+      "slug": "de-modo-assombroso-e-admiravel-fui-formada",
+      "nome": "De modo assombroso e admirável fui formada",
+      "colecao": "tema-identidade",
+      "publico": "feminino",
+      "preco": 79.9,
+      "precoDe": null,
+      "descricao": "O verso que abre o coração da marca, vestido em traço delicado. Feita à mão, conhecida pelo nome.",
+      "detalhes": [],
+      "cores": [
+        {
+          "id": "off-white",
+          "nome": "Off-white",
+          "hex": "#F1EBDF",
+          "imagens": [
+            "assets/produtos/de-modo-assombroso-e-admiravel-fui-formada/off-white-02.webp",
+            "assets/produtos/de-modo-assombroso-e-admiravel-fui-formada/off-white-03.webp",
+            "assets/produtos/de-modo-assombroso-e-admiravel-fui-formada/off-white-04.webp",
+            "assets/produtos/de-modo-assombroso-e-admiravel-fui-formada/off-white-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/de-modo-assombroso-e-admiravel-fui-formada/off-white-01.webp"
+        },
+        {
+          "id": "preta",
+          "nome": "Preta",
+          "hex": "#1C1C1C",
+          "imagens": [
+            "assets/produtos/de-modo-assombroso-e-admiravel-fui-formada/preta-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          }
+        },
+        {
+          "id": "marrom",
+          "nome": "Marrom",
+          "hex": "#4A2A1E",
+          "imagens": [],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          }
+        }
+      ],
+      "edicaoLimitada": true,
+      "destaque": true,
+      "ativo": true
+    },
+    {
+      "slug": "ele-me-chama-de-filha",
+      "nome": "Ele me chama de filha",
+      "colecao": "tema-identidade",
+      "publico": "feminino",
+      "preco": 79.9,
+      "precoDe": null,
+      "descricao": "Antes de qualquer título, conquista ou erro: filha. A identidade que ninguém pode tirar.",
+      "detalhes": [],
+      "cores": [
+        {
+          "id": "off-white",
+          "nome": "Off-white",
+          "hex": "#F1EBDF",
+          "imagens": [
+            "assets/produtos/ele-me-chama-de-filha/off-white-02.webp",
+            "assets/produtos/ele-me-chama-de-filha/off-white-03.webp",
+            "assets/produtos/ele-me-chama-de-filha/off-white-04.webp",
+            "assets/produtos/ele-me-chama-de-filha/off-white-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/ele-me-chama-de-filha/off-white-01.webp"
+        },
+        {
+          "id": "preta",
+          "nome": "Preta",
+          "hex": "#1C1C1C",
+          "imagens": [
+            "assets/produtos/ele-me-chama-de-filha/preta-02.webp",
+            "assets/produtos/ele-me-chama-de-filha/preta-03.webp",
+            "assets/produtos/ele-me-chama-de-filha/preta-04.webp",
+            "assets/produtos/ele-me-chama-de-filha/preta-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/ele-me-chama-de-filha/preta-01.webp"
+        }
+      ],
+      "edicaoLimitada": true,
+      "destaque": true,
+      "ativo": true
+    },
+    {
+      "slug": "minha-identidade-esta-no-eu-sou",
+      "nome": "Minha identidade está no Eu Sou",
+      "colecao": "tema-identidade",
+      "publico": "feminino",
+      "preco": 79.9,
+      "precoDe": null,
+      "descricao": "A digital em forma de coração, o símbolo da marca vestido. Sua identidade ancorada Naquele que não muda.",
+      "detalhes": [],
+      "cores": [
+        {
+          "id": "preta",
+          "nome": "Preta",
+          "hex": "#1C1C1C",
+          "imagens": [
+            "assets/produtos/minha-identidade-esta-no-eu-sou/preta-02.webp",
+            "assets/produtos/minha-identidade-esta-no-eu-sou/preta-03.webp",
+            "assets/produtos/minha-identidade-esta-no-eu-sou/preta-04.webp",
+            "assets/produtos/minha-identidade-esta-no-eu-sou/preta-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/minha-identidade-esta-no-eu-sou/preta-01.webp"
+        },
+        {
+          "id": "marrom",
+          "nome": "Marrom",
+          "hex": "#4A2A1E",
+          "imagens": [
+            "assets/produtos/minha-identidade-esta-no-eu-sou/marrom-02.webp",
+            "assets/produtos/minha-identidade-esta-no-eu-sou/marrom-03.webp",
+            "assets/produtos/minha-identidade-esta-no-eu-sou/marrom-04.webp",
+            "assets/produtos/minha-identidade-esta-no-eu-sou/marrom-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/minha-identidade-esta-no-eu-sou/marrom-01.webp"
+        },
+        {
+          "id": "off-white",
+          "nome": "Off-white",
+          "hex": "#F1EBDF",
+          "imagens": [
+            "assets/produtos/minha-identidade-esta-no-eu-sou/off-white-02.webp",
+            "assets/produtos/minha-identidade-esta-no-eu-sou/off-white-03.webp",
+            "assets/produtos/minha-identidade-esta-no-eu-sou/off-white-04.webp",
+            "assets/produtos/minha-identidade-esta-no-eu-sou/off-white-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/minha-identidade-esta-no-eu-sou/off-white-01.webp"
+        }
+      ],
+      "edicaoLimitada": true,
+      "destaque": true,
+      "ativo": true
+    },
+    {
+      "slug": "saia-do-barco",
+      "nome": "Saia do barco",
+      "colecao": "saia-do-barco",
+      "publico": "masculino",
+      "preco": 90.0,
+      "precoDe": null,
+      "descricao": "A fé começa onde o controle termina. Para quem está pronto para confiar no que ainda não se vê.",
+      "detalhes": [
+        "Modelagem oversize: caimento mais solto e largo"
+      ],
+      "cores": [
+        {
+          "id": "preta",
+          "nome": "Preta",
+          "hex": "#1C1C1C",
+          "imagens": [
+            "assets/produtos/saia-do-barco/preta-02.webp",
+            "assets/produtos/saia-do-barco/preta-03.webp",
+            "assets/produtos/saia-do-barco/preta-04.webp",
+            "assets/produtos/saia-do-barco/preta-01.webp"
+          ],
+          "grade": {
+            "P": 5,
+            "M": 5,
+            "G": 5,
+            "GG": 5,
+            "G1": 5
+          },
+          "capa": "assets/produtos/saia-do-barco/preta-01.webp"
+        }
+      ],
+      "edicaoLimitada": true,
+      "destaque": true,
+      "ativo": true,
+      "modelagem": "oversize"
+    }
+  ]
+}
