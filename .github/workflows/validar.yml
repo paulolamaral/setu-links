@@ -1,0 +1,25 @@
+# Roda a cada alteração: confere páginas/SEO geradas, CSP, versões dos arquivos e valida dados e imagens.
+# Se algo estiver fora de dia, falha e diz qual comando rodar.
+name: Validar site
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Conferir tudo (páginas, SEO, CSP, versões, dados e imagens)
+        run: node scripts/build.mjs --verificar
+      - name: Listar imagens novas/alteradas (para revisão humana)
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          echo "### Imagens alteradas neste PR (confira uma a uma)" >> "$GITHUB_STEP_SUMMARY"
+          git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'assets/**' | sed 's/^/- /' >> "$GITHUB_STEP_SUMMARY" || true
