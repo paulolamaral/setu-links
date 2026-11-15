@@ -106,7 +106,31 @@ escreve('sobre/index.html', estatica('sobre/index.html', (t, d) => ({
   jsonld: [{ '@context': 'https://schema.org', '@type': 'AboutPage', url: `${DOM}/sobre/`, name: t, description: d, inLanguage: 'pt-BR', about: { '@id': `${DOM}/#marca` } },
     migalhas([['Início', `${DOM}/`], ['Sobre', `${DOM}/sobre/`]]), organizacao()],
 })));
-for (const rel of ['404.html', 'sacola/index.html', 'links/index.html', 'cadastro/index.html']) escreve(rel, estatica(rel, () => ({ robots: 'noindex,nofollow' })));
+for (const rel of ['404.html', 'sacola/index.html', 'cadastro/index.html']) escreve(rel, estatica(rel, () => ({ robots: 'noindex,nofollow' })));
+
+// links/: página da bio do Instagram. Os três cartões saem de data/loja.json (WhatsApp e Instagram nunca ficam diferentes do resto do site).
+{
+  const zapNum = String(loja.whatsapp).replace(/\D/g, '');
+  const insta = loja.instagram || '';
+  const user = (insta.match(/instagram\.com\/([A-Za-z0-9._]+)/) || [])[1] || '';
+  const cartao = (href, icone, titulo, sub) => `      <a class="link-card" href="${A(href)}" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">${icone}</svg>
+        <span class="link-text"><span class="link-title">${titulo}</span><span class="link-sub">${sub}</span></span>
+      </a>`;
+  const ICONES = {
+    insta: '<rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>',
+    loja: '<path d="M6 8h12l-1 12.2a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 8Z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path>',
+    zap: '<path d="M20.5 11.9a8.5 8.5 0 0 1-12.4 7.5L4 20.5l1.15-3.9A8.5 8.5 0 1 1 20.5 11.9Z"></path><path d="M9.2 9.6c-.2 1 .6 2.6 1.5 3.5.9.9 2.5 1.8 3.6 1.6.5-.1 1-.6 1.2-1.1l.1-.5-1.6-1-.5.7c-.7-.2-1.4-.7-1.9-1.2-.5-.5-.9-1.1-1.1-1.8l.7-.6-.9-1.6h-.5c-.5.1-.9.5-1.1 1Z" fill="currentColor" stroke="none"></path>',
+  };
+  const lista = [
+    insta ? cartao(insta, ICONES.insta, 'Instagram', user ? `@${A(user)}` : 'Siga a Sê Tu') : '',
+    cartao(`${DOM}/`, ICONES.loja, 'Loja', 'Conheça as peças'),
+    zapNum ? cartao(`https://api.whatsapp.com/send?phone=${zapNum}&text=${encodeURIComponent('Oi, Sê Tu!')}`, ICONES.zap, 'WhatsApp', 'Fale com a gente') : '',
+  ].filter(Boolean).join('\n\n');
+  const bloco = `<!--links-->\n    <nav class="links" aria-label="Links da Sê Tu">\n${lista}\n    </nav>\n    <!--/links-->`;
+  const html = estatica('links/index.html', () => ({ robots: 'noindex,nofollow' })).replace(/<!--links-->[\s\S]*?<!--\/links-->/, () => bloco);
+  escreve('links/index.html', html);
+}
 for (const rel of ['colecao/index.html', 'produto/index.html']) escreve(rel, estatica(rel, () => ({ robots: 'noindex,follow' })));
 
 // ---------- produto/<slug>/ ----------
