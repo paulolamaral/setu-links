@@ -1,4 +1,4 @@
-import { slugSeguro } from './seguranca.js?v=424230757c';
+import { slugSeguro } from './seguranca.js?v=adb5b385e5';
 // Estado da sacola. localStorage com fallback em memória.
 const CHAVE = 'setu.sacola';
 let memoria = [];

@@ -1,8 +1,8 @@
-import { carregarCatalogo, cardProduto, imagensDaCor, estoqueCor, esgotado, TAMANHOS } from './catalogo.js?v=424230757c';
-import { adicionar, qtdNaSacola } from './sacola.js?v=424230757c';
-import { brl, esc, injetarSimbolo, linkZap, RAIZ } from './util.js?v=424230757c';
-import { carregarLoja } from './seguranca.js?v=424230757c';
-import { verProduto, adicionouNaSacola } from './rastreio.js?v=424230757c';
+import { carregarCatalogo, cardProduto, imagensDaCor, estoqueCor, esgotado, TAMANHOS } from './catalogo.js?v=adb5b385e5';
+import { adicionar, qtdNaSacola } from './sacola.js?v=adb5b385e5';
+import { brl, esc, injetarSimbolo, linkZap, RAIZ } from './util.js?v=adb5b385e5';
+import { carregarLoja } from './seguranca.js?v=adb5b385e5';
+import { verProduto, adicionouNaSacola } from './rastreio.js?v=adb5b385e5';
 
 // página gerada: slug vem do HTML (endereço limpo); molde antigo: ?p=
 const slug = document.getElementById('produto')?.dataset.slug || new URLSearchParams(location.search).get('p');

@@ -1,10 +1,10 @@
-import { carregarCatalogo, detalharItem } from './catalogo.js?v=424230757c';
-import { alterar, esvaziar, itens } from './sacola.js?v=424230757c';
-import { codigoPedido, brl, esc, injetarSimbolo, RAIZ } from './util.js?v=424230757c';
-import { linhaHtml, quantosItens, rotuloItens, vazioHtml, NOTA_PAGAMENTO } from './sacola-ui.js?v=424230757c';
-import { carregarLoja, texto as limparTexto } from './seguranca.js?v=424230757c';
-import { iniciouPedido, enviouPedido } from './rastreio.js?v=424230757c';
-import { enviarWebhook, linkWhatsApp, montarMensagem } from './whatsapp.js?v=424230757c';
+import { carregarCatalogo, detalharItem } from './catalogo.js?v=adb5b385e5';
+import { alterar, esvaziar, itens } from './sacola.js?v=adb5b385e5';
+import { codigoPedido, brl, esc, injetarSimbolo, RAIZ } from './util.js?v=adb5b385e5';
+import { linhaHtml, quantosItens, rotuloItens, vazioHtml, NOTA_PAGAMENTO } from './sacola-ui.js?v=adb5b385e5';
+import { carregarLoja, texto as limparTexto } from './seguranca.js?v=adb5b385e5';
+import { iniciouPedido, enviouPedido } from './rastreio.js?v=adb5b385e5';
+import { enviarWebhook, linkWhatsApp, montarMensagem } from './whatsapp.js?v=adb5b385e5';
 
 const raiz = document.getElementById('sacola');
 const { produtos } = await carregarCatalogo();

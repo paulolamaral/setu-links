@@ -1,7 +1,7 @@
-import { carregarCatalogo, detalharItem, fotosCard, versaoCard, esgotado } from './catalogo.js?v=424230757c';
-import { alterar, itens } from './sacola.js?v=424230757c';
-import { brl, esc, injetarSimbolo, RAIZ } from './util.js?v=424230757c';
-import { linhaHtml, quantosItens, rotuloItens, vazioHtml, GARANTIAS } from './sacola-ui.js?v=424230757c';
+import { carregarCatalogo, detalharItem, fotosCard, versaoCard, esgotado } from './catalogo.js?v=adb5b385e5';
+import { alterar, itens } from './sacola.js?v=adb5b385e5';
+import { brl, esc, injetarSimbolo, RAIZ } from './util.js?v=adb5b385e5';
+import { linhaHtml, quantosItens, rotuloItens, vazioHtml, GARANTIAS } from './sacola-ui.js?v=adb5b385e5';
 
 const naPaginaSacola = /\/sacola\/?(index\.html)?$/.test(location.pathname);
 let el, aberta = false, ultimoFoco;
