@@ -1,6 +1,6 @@
 // Tudo que vem de fora (JSON, localStorage, formulário) passa por aqui antes de virar HTML, link ou imagem.
 // Regra de ouro: imagens só da pasta assets/ do próprio site; links só https de hosts permitidos.
-import { carregarJSON, url } from './util.js?v=5ab12daffd';
+import { carregarJSON, url } from './util.js?v=adb5b385e5';
 
 export const TAMANHOS_OK = ['P', 'M', 'G', 'GG', 'G1', 'EXG'];
 

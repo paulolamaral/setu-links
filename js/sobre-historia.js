@@ -4,7 +4,7 @@
 //  3. os textos se dissolvem um no outro, sempre ligados ao movimento da rolagem (nada dispara sozinho).
 // Na seção "na contramão", uma linha risca cada frase do mundo conforme ela chega.
 // Sem movimento (prefers-reduced-motion) ou sem JS: tudo aparece parado e legível, em blocos empilhados.
-import { injetarSimbolo, url } from './util.js?v=5ab12daffd';
+import { injetarSimbolo, url } from './util.js?v=adb5b385e5';
 
 const secao = document.getElementById('historia');
 const digital = document.getElementById('sbh-digital');

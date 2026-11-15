@@ -5,6 +5,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { paginaLinks } from './pagina-links.mjs';
 
 const raiz = fileURLToPath(new URL('..', import.meta.url));
 const verificar = process.argv.includes('--verificar');
@@ -106,7 +107,10 @@ escreve('sobre/index.html', estatica('sobre/index.html', (t, d) => ({
   jsonld: [{ '@context': 'https://schema.org', '@type': 'AboutPage', url: `${DOM}/sobre/`, name: t, description: d, inLanguage: 'pt-BR', about: { '@id': `${DOM}/#marca` } },
     migalhas([['Início', `${DOM}/`], ['Sobre', `${DOM}/sobre/`]]), organizacao()],
 })));
-for (const rel of ['404.html', 'sacola/index.html', 'links/index.html', 'cadastro/index.html']) escreve(rel, estatica(rel, () => ({ robots: 'noindex,nofollow' })));
+for (const rel of ['404.html', 'sacola/index.html', 'cadastro/index.html']) escreve(rel, estatica(rel, () => ({ robots: 'noindex,nofollow' })));
+
+// links/: página da bio do Instagram. O corpo inteiro (digital desenhada, botões e faixa de peças) é gerado por scripts/pagina-links.mjs.
+escreve('links/index.html', paginaLinks({ html: estatica('links/index.html', () => ({ robots: 'noindex,nofollow' })), loja, produtos, A, brl, raiz }));
 for (const rel of ['colecao/index.html', 'produto/index.html']) escreve(rel, estatica(rel, () => ({ robots: 'noindex,follow' })));
 
 // ---------- produto/<slug>/ ----------

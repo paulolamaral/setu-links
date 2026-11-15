@@ -1,5 +1,5 @@
-import { esc, injetarSimbolo, RAIZ } from './util.js?v=5ab12daffd';
-import { carregarCatalogo, cardProduto } from './catalogo.js?v=5ab12daffd';
+import { esc, injetarSimbolo, RAIZ } from './util.js?v=adb5b385e5';
+import { carregarCatalogo, cardProduto } from './catalogo.js?v=adb5b385e5';
 
 const dados = await carregarCatalogo();
 const colecoes = dados.colecoes;

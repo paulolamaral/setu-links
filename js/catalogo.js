@@ -1,5 +1,5 @@
-import { brl, carregarJSON, esc, RAIZ, url } from './util.js?v=5ab12daffd';
-import { sanitizarCatalogo } from './seguranca.js?v=5ab12daffd';
+import { brl, carregarJSON, esc, RAIZ, url } from './util.js?v=adb5b385e5';
+import { sanitizarCatalogo } from './seguranca.js?v=adb5b385e5';
 
 export const TAMANHOS = ['P', 'M', 'G', 'GG', 'G1'];
 

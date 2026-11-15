@@ -20,7 +20,7 @@ async function arquivoPara(caminho) {
   if (rel.split(sep).some((p) => p.startsWith('.') && p !== '.nojekyll')) return null;       // .git etc. nunca são servidos
   try {
     const s = await stat(abs);
-    if (s.isDirectory()) { const idx = join(abs, 'index.html'); await stat(idx); return idx; }
+    if (s.isDirectory()) { const idx = join(abs, 'index.html'); await stat(idx); return { dir: idx }; }
     return abs;
   } catch { return null; }
 }
@@ -30,6 +30,11 @@ createServer(async (req, res) => {
     const { pathname } = new URL(req.url, 'http://x');
     let arq = await arquivoPara(pathname);
     let status = 200;
+    // como o GitHub Pages: /pasta vira /pasta/ (senão os caminhos relativos da página quebram)
+    if (arq && typeof arq === 'object') {
+      if (!pathname.endsWith('/')) { res.writeHead(301, { Location: pathname + '/' + (new URL(req.url, 'http://x').search || '') }); res.end(); return; }
+      arq = arq.dir;
+    }
     if (!arq) { arq = join(raiz, '404.html'); status = 404; }
     const corpo = await readFile(arq);
     res.writeHead(status, { 'Content-Type': TIPOS[extname(arq).toLowerCase()] || 'application/octet-stream', 'Cache-Control': 'no-cache' });
