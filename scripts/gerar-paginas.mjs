@@ -94,6 +94,8 @@ const faqJson = () => ({ '@context': 'https://schema.org', '@type': 'FAQPage',
 
 let home = estatica('index.html', (t, d) => ({
   url: `${DOM}/`, og: abs('assets/og/home.jpg'), ogAlt: 'Casal vestindo camisetas cristãs da Sê Tu',
+  // verificação de domínio do Facebook: precisa estar no <head> da home (código em data/loja.json)
+  extra: /^[a-z0-9]{20,40}$/i.test(loja.verificacaoFacebook || '') ? `<meta name="facebook-domain-verification" content="${A(loja.verificacaoFacebook)}">` : '',
   jsonld: [organizacao(), { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${DOM}/#site`, url: `${DOM}/`, name: loja.marca, inLanguage: 'pt-BR', publisher: { '@id': `${DOM}/#marca` } }, ...(loja.faq?.length ? [faqJson()] : [])],
 }));
 if (loja.faq?.length) home = home.replace(/<!--faq-->[\s\S]*?<!--\/faq-->/, () => faqHtml());
