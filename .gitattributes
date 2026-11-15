@@ -1,0 +1,6 @@
+# Fins de linha iguais em qualquer sistema (o hash de versão dos arquivos depende do conteúdo)
+* text=auto eol=lf
+*.webp binary
+*.jpg binary
+*.png binary
+*.ico binary

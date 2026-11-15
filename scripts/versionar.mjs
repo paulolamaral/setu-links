@@ -10,16 +10,17 @@ import { listarPaginas } from './paginas.mjs';
 const raiz = fileURLToPath(new URL('..', import.meta.url));
 const verificar = process.argv.includes('--verificar');
 const IMPORT = /(from\s+'\.\/[a-z0-9-]+\.js)(\?v=[a-f0-9]+)?(')/g;
-const sem = (s) => s.replace(IMPORT, '$1$3');
+const lf = (s) => s.replace(/\r\n/g, '\n');   // o hash não pode depender do tipo de quebra de linha (Windows x Linux)
+const sem = (s) => lf(s).replace(IMPORT, '$1$3');
 
 const jsDir = join(raiz, 'js');
 const arquivosJs = readdirSync(jsDir).filter((f) => f.endsWith('.js')).sort();
 const css = readFileSync(join(raiz, 'assets/css/setu.css'), 'utf8');
 const hash = createHash('sha256');
 for (const f of arquivosJs) hash.update(f + sem(readFileSync(join(jsDir, f), 'utf8')));
-hash.update(css);
+hash.update(lf(css));
 const extras = ['links/links.css', 'links/links.js', 'cadastro/cadastro.css', 'cadastro/cadastro.js'];
-for (const e of extras) hash.update(e + readFileSync(join(raiz, e), 'utf8'));
+for (const e of extras) hash.update(e + lf(readFileSync(join(raiz, e), 'utf8')));
 const V = hash.digest('hex').slice(0, 10);
 
 let mudou = 0;
