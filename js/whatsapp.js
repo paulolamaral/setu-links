@@ -1,4 +1,4 @@
-import { brl, linkZap } from './util.js?v=865486244a';
+import { brl, linkZap } from './util.js?v=5ab12daffd';
 
 const moeda = (v) => brl(v).replace(/ /g, ' ');
 

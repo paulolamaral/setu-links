@@ -1,5 +1,5 @@
-import { carregarCatalogo, cardProduto } from './catalogo.js?v=865486244a';
-import { esc, injetarSimbolo, RAIZ } from './util.js?v=865486244a';
+import { carregarCatalogo, cardProduto } from './catalogo.js?v=5ab12daffd';
+import { esc, injetarSimbolo, RAIZ } from './util.js?v=5ab12daffd';
 
 // página gerada: id vem do HTML (endereço limpo); molde antigo: ?c=
 const id = document.getElementById('colecao-topo')?.dataset.colecao || new URLSearchParams(location.search).get('c');

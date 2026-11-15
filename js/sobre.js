@@ -1,5 +1,5 @@
-import { esc } from './util.js?v=865486244a';
-import { carregarLoja } from './seguranca.js?v=865486244a';
+import { esc } from './util.js?v=5ab12daffd';
+import { carregarLoja } from './seguranca.js?v=5ab12daffd';
 
 // Versículos vêm de data/loja.json (regra da marca: referências bíblicas só a partir da configuração)
 const loja = await carregarLoja();

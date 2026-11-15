@@ -2,7 +2,7 @@
 //   1. contorno traçado   2. costuras (ponto a ponto)   3. tecido   4. a estampa: a digital, linha a linha   5. a etiqueta
 // Tudo é desenhado em vetor, sem fotos nem bibliotecas, e ligado ao movimento da rolagem (nada dispara sozinho).
 // Sem movimento (prefers-reduced-motion) ou sem JS: a camiseta aparece pronta e os textos ficam empilhados.
-import { url } from './util.js?v=865486244a';
+import { url } from './util.js?v=5ab12daffd';
 
 const secao = document.getElementById('construcao');
 const alvo = document.getElementById('sbc-camiseta');

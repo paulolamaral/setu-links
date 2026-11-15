@@ -1,7 +1,8 @@
-import { carregarCatalogo, cardProduto, imagensDaCor, estoqueCor, esgotado, TAMANHOS } from './catalogo.js?v=865486244a';
-import { adicionar, qtdNaSacola } from './sacola.js?v=865486244a';
-import { brl, esc, injetarSimbolo, linkZap, RAIZ } from './util.js?v=865486244a';
-import { carregarLoja } from './seguranca.js?v=865486244a';
+import { carregarCatalogo, cardProduto, imagensDaCor, estoqueCor, esgotado, TAMANHOS } from './catalogo.js?v=5ab12daffd';
+import { adicionar, qtdNaSacola } from './sacola.js?v=5ab12daffd';
+import { brl, esc, injetarSimbolo, linkZap, RAIZ } from './util.js?v=5ab12daffd';
+import { carregarLoja } from './seguranca.js?v=5ab12daffd';
+import { verProduto, adicionouNaSacola } from './rastreio.js?v=5ab12daffd';
 
 // página gerada: slug vem do HTML (endereço limpo); molde antigo: ?p=
 const slug = document.getElementById('produto')?.dataset.slug || new URLSearchParams(location.search).get('p');
@@ -17,6 +18,7 @@ if (!p) {
     <a class="btn" href="${RAIZ}#pecas">Ver as peças</a></div>`;
 } else {
   document.body.classList.add('pdp-pagina');
+  verProduto(p);
   document.title = `${p.nome} — Sê Tu`;
   document.querySelector('meta[name="description"]')?.setAttribute('content', p.descricao || '');
 
@@ -156,6 +158,7 @@ if (!p) {
     const ja = qtdNaSacola(p.slug, cor.id, tam);
     if (ja >= n) { $('feedback').textContent = 'Você já tem todas as unidades disponíveis deste tamanho na sacola.'; return; }
     adicionar({ slug: p.slug, cor: cor.id, tam, qtd }, n);
+    adicionouNaSacola(p, cor, tam, qtd);
     $('feedback').innerHTML = `Adicionado à sacola. <a href="${RAIZ}sacola/">Ver sacola</a>`;
     atualizar();
   });

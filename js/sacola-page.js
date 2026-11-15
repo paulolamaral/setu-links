@@ -1,9 +1,10 @@
-import { carregarCatalogo, detalharItem } from './catalogo.js?v=865486244a';
-import { alterar, esvaziar, itens } from './sacola.js?v=865486244a';
-import { codigoPedido, brl, esc, injetarSimbolo, RAIZ } from './util.js?v=865486244a';
-import { linhaHtml, quantosItens, rotuloItens, vazioHtml, NOTA_PAGAMENTO } from './sacola-ui.js?v=865486244a';
-import { carregarLoja, texto } from './seguranca.js?v=865486244a';
-import { enviarWebhook, linkWhatsApp, montarMensagem } from './whatsapp.js?v=865486244a';
+import { carregarCatalogo, detalharItem } from './catalogo.js?v=5ab12daffd';
+import { alterar, esvaziar, itens } from './sacola.js?v=5ab12daffd';
+import { codigoPedido, brl, esc, injetarSimbolo, RAIZ } from './util.js?v=5ab12daffd';
+import { linhaHtml, quantosItens, rotuloItens, vazioHtml, NOTA_PAGAMENTO } from './sacola-ui.js?v=5ab12daffd';
+import { carregarLoja, texto as limparTexto } from './seguranca.js?v=5ab12daffd';
+import { iniciouPedido, enviouPedido } from './rastreio.js?v=5ab12daffd';
+import { enviarWebhook, linkWhatsApp, montarMensagem } from './whatsapp.js?v=5ab12daffd';
 
 const raiz = document.getElementById('sacola');
 const { produtos } = await carregarCatalogo();
@@ -94,9 +95,9 @@ function restaurarCampos(v) {
 raiz.addEventListener('submit', (e) => {
   e.preventDefault();
   const f = e.target;
-  const nome = texto(f.nome.value, 80);
-  const cidade = texto(f.cidade.value, 60);
-  const obs = texto(f.obs.value, 300);
+  const nome = limparTexto(f.nome.value, 80);
+  const cidade = limparTexto(f.cidade.value, 60);
+  const obs = limparTexto(f.obs.value, 300);
   const erro = document.getElementById('erro');
   if (!nome || !cidade) {
     erro.textContent = !nome ? 'Conte seu nome para a gente.' : 'Informe sua cidade e UF.';
@@ -109,12 +110,13 @@ raiz.addEventListener('submit', (e) => {
   const subtotal = det.reduce((a, i) => a + i.subtotal, 0);
   const op = opcoes.find((o) => o.id === f.elements.entrega.value) || opcoes[0];
   const codigo = codigoPedido();
-  const texto = montarMensagem({ codigo, itens: det, subtotal, entrega: op.rotulo, nome, cidade, obs });
-  const link = linkWhatsApp(loja.whatsapp, texto);
+  const mensagem = montarMensagem({ codigo, itens: det, subtotal, entrega: op.rotulo, nome, cidade, obs });
+  const link = linkWhatsApp(loja.whatsapp, mensagem);
+  enviouPedido(det, subtotal);
 
   enviarWebhook(loja.webhookPedidos, {
     codigo, nome, cidade, entrega: op.rotulo, obs, subtotal: subtotal.toFixed(2),
-    itens: det.map((i) => `${i.p.nome} | ${i.cor.nome} | ${i.tam} | ${i.qtd}x`).join('\n'), mensagem: texto,
+    itens: det.map((i) => `${i.p.nome} | ${i.cor.nome} | ${i.tam} | ${i.qtd}x`).join('\n'), mensagem,
   });
 
   raiz.innerHTML = `<div class="vazio confirma"><p class="eyebrow">pedido ${esc(codigo)}</p>
@@ -129,6 +131,7 @@ raiz.addEventListener('submit', (e) => {
 });
 
 desenhar();
+{ const d0 = detalhes(); if (d0.length) iniciouPedido(d0, d0.reduce((a, i) => a + i.subtotal, 0)); }
 
 // avisa que o conteúdo da página já está montado (o rodapé só aparece depois disso)
 document.body.classList.add('pronto');

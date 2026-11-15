@@ -1,6 +1,6 @@
 // Página 404: em vez de um beco sem saída, mostra algumas peças para o visitante continuar na loja.
-import { injetarSimbolo } from './util.js?v=865486244a';
-import { carregarCatalogo, cardProduto } from './catalogo.js?v=865486244a';
+import { injetarSimbolo } from './util.js?v=5ab12daffd';
+import { carregarCatalogo, cardProduto } from './catalogo.js?v=5ab12daffd';
 
 const { produtos } = await carregarCatalogo();
 const lista = produtos.filter((p) => p.destaque).slice(0, 4);
