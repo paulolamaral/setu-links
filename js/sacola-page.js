@@ -1,10 +1,10 @@
-import { carregarCatalogo, detalharItem } from './catalogo.js?v=5ab12daffd';
-import { alterar, esvaziar, itens } from './sacola.js?v=5ab12daffd';
-import { codigoPedido, brl, esc, injetarSimbolo, RAIZ } from './util.js?v=5ab12daffd';
-import { linhaHtml, quantosItens, rotuloItens, vazioHtml, NOTA_PAGAMENTO } from './sacola-ui.js?v=5ab12daffd';
-import { carregarLoja, texto as limparTexto } from './seguranca.js?v=5ab12daffd';
-import { iniciouPedido, enviouPedido } from './rastreio.js?v=5ab12daffd';
-import { enviarWebhook, linkWhatsApp, montarMensagem } from './whatsapp.js?v=5ab12daffd';
+import { carregarCatalogo, detalharItem } from './catalogo.js?v=424230757c';
+import { alterar, esvaziar, itens } from './sacola.js?v=424230757c';
+import { codigoPedido, brl, esc, injetarSimbolo, RAIZ } from './util.js?v=424230757c';
+import { linhaHtml, quantosItens, rotuloItens, vazioHtml, NOTA_PAGAMENTO } from './sacola-ui.js?v=424230757c';
+import { carregarLoja, texto as limparTexto } from './seguranca.js?v=424230757c';
+import { iniciouPedido, enviouPedido } from './rastreio.js?v=424230757c';
+import { enviarWebhook, linkWhatsApp, montarMensagem } from './whatsapp.js?v=424230757c';
 
 const raiz = document.getElementById('sacola');
 const { produtos } = await carregarCatalogo();

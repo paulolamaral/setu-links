@@ -1,7 +1,7 @@
 // Rastreamento (Meta Pixel e GA4). Só carrega se o ID estiver preenchido em data/loja.json.
 // Regras: nenhum dado pessoal (nome, cidade, observação) vai para os pixels; respeita "Não rastrear" do navegador;
 // se o Pixel/GA4 falhar ou estiver bloqueado (adblock), o site segue funcionando normalmente.
-import { carregarLoja } from './seguranca.js?v=5ab12daffd';
+import { carregarLoja } from './seguranca.js?v=424230757c';
 
 let cfg = null;        // { meta, ga4 } depois de iniciar
 let promessa = null;

@@ -1,8 +1,8 @@
-import { esc, injetarSimbolo, instalarFallbackImagens, instalarHoverAlt, linkZap, RAIZ } from './util.js?v=5ab12daffd';
-import { carregarLoja } from './seguranca.js?v=5ab12daffd';
-import { iniciarRastreio } from './rastreio.js?v=5ab12daffd';
-import { quantidade } from './sacola.js?v=5ab12daffd';
-import { iniciarGaveta } from './gaveta.js?v=5ab12daffd';
+import { esc, injetarSimbolo, instalarFallbackImagens, instalarHoverAlt, linkZap, RAIZ } from './util.js?v=424230757c';
+import { carregarLoja } from './seguranca.js?v=424230757c';
+import { iniciarRastreio } from './rastreio.js?v=424230757c';
+import { quantidade } from './sacola.js?v=424230757c';
+import { iniciarGaveta } from './gaveta.js?v=424230757c';
 
 const ICONE_SACOLA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>';
 const ICONE_ZAP = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>';
